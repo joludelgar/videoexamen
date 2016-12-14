@@ -50,7 +50,7 @@ class Persona extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getFichas()
+    public function getDirige()
     {
         return $this->hasMany(Ficha::className(), ['director_id' => 'id'])->inverseOf('director');
     }
@@ -66,7 +66,7 @@ class Persona extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getFichas0()
+    public function getActua()
     {
         return $this->hasMany(Ficha::className(), ['id' => 'ficha_id'])->viaTable('reparto', ['persona_id' => 'id']);
     }

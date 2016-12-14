@@ -60,7 +60,7 @@ class Ficha extends \yii\db\ActiveRecord
      */
     public function getDirector()
     {
-        return $this->hasOne(Persona::className(), ['id' => 'director_id'])->inverseOf('fichas');
+        return $this->hasOne(Persona::className(), ['id' => 'director_id'])->inverseOf('dirige');
     }
 
     /**
@@ -74,7 +74,7 @@ class Ficha extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getPersonas()
+    public function getActuan()
     {
         return $this->hasMany(Persona::className(), ['id' => 'persona_id'])->viaTable('reparto', ['ficha_id' => 'id']);
     }

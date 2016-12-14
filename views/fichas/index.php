@@ -28,7 +28,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'titulo',
             'anyo',
             'duracion',
-            'director_id',
+            [
+                'attribute' => 'director_id',
+                'value' => 'director.nombre',
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
