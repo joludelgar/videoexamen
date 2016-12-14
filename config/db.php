@@ -2,7 +2,7 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=yii2basic',
+    'dsn' => 'pgsql:host=localhost;dbname=videoexamen',
     'username' => 'videoexamen',
     'password' => 'videoexamen',
     'charset' => 'utf8',
