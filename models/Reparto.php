@@ -42,8 +42,8 @@ class Reparto extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'ficha_id' => 'Ficha ID',
-            'persona_id' => 'Persona ID',
+            'ficha_id' => 'Título de la película',
+            'persona_id' => 'Nombre del actor',
         ];
     }
 

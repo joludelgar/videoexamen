@@ -3,6 +3,8 @@
 namespace app\controllers;
 
 use Yii;
+use app\models\Ficha;
+use app\models\Persona;
 use app\models\Reparto;
 use app\models\RepartoSearch;
 use yii\web\Controller;
@@ -69,8 +71,19 @@ class RepartosController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'ficha_id' => $model->ficha_id, 'persona_id' => $model->persona_id]);
         } else {
+            $ficha = Ficha::find()
+            ->select('titulo, id')
+            ->indexBy('id')
+            ->column();
+            $persona = Persona::find()
+            ->select('nombre, id')
+            ->indexBy('id')
+            ->column();
+
             return $this->render('create', [
                 'model' => $model,
+                'ficha' => $ficha,
+                'persona' => $persona,
             ]);
         }
     }
@@ -89,8 +102,19 @@ class RepartosController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'ficha_id' => $model->ficha_id, 'persona_id' => $model->persona_id]);
         } else {
+            $ficha = Ficha::find()
+            ->select('titulo, id')
+            ->indexBy('id')
+            ->column();
+            $persona = Persona::find()
+            ->select('nombre, id')
+            ->indexBy('id')
+            ->column();
+            
             return $this->render('update', [
                 'model' => $model,
+                'ficha' => $ficha,
+                'persona' => $persona,
             ]);
         }
     }

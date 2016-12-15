@@ -26,8 +26,14 @@ $this->params['breadcrumbs'][] = $this->title;
 
             //'ficha_id',
             //'persona_id',
-            'ficha.titulo',
-            'persona.nombre',
+            [
+                'attribute' => 'ficha_id',
+                'value' => 'ficha.titulo',
+            ],
+            [
+                'attribute' => 'persona_id',
+                'value' => 'persona.nombre',
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
